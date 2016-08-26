@@ -29,14 +29,27 @@
     </div>
     <div id="admin" class="container">
       <h2>Set-up Your Pizza Business</h2>
-      <button id="logout">Logout Here</button>
+      <div class="row">
+        <div class="col-md-3">
+          <h3>Pizza Sizes:</h3>
+          <ul id="pizzaSizes"></ul>
+          <h3>Add a Pizza Size:</h3>
+          <div class="form-group">
+            <label for="sizeDescription">Size Description: </label>
+            <input type="text" id="sizeDescription" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="sizePrice">Size Base Price: </label>
+            <input type="text" id="sizePrice" class="form-control">
+          </div>
+          <button class="btn btn-default form-control" id="addPizzaSize">Add Size</button>
+        </div>
+      </div>
     </div>
-    <div id="signin" class="container">
-      <h2>Sign in for Website Administration</h2>
-      <button id="login">Login Here</button>
-    </div>
+
   <script src="js/jquery-3.1.0.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/scripts.js"></script>
+  <script src="js/admin.js"></script>
   </body>
 </html>
