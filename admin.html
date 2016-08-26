@@ -30,10 +30,25 @@
     <div id="admin" class="container">
       <h2>Set-up Your Pizza Business</h2>
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-sm-4">
           <h3>Pizza Sizes:</h3>
+          <p>Expand your menu by offering several sizes of pizza. The base price for each pizza is what it costs to build a standard cheese pizza with no toppings.</p>
           <ul id="pizzaSizes"></ul>
-          <h3>Add a Pizza Size:</h3>
+        </div>
+        <div class="col-sm-4">
+          <h3>Ingredients:</h3>
+          <p>All of the great things you need to make a pizza, types of crust, sauces, cheeses, and lots of toppings!</p>
+          <ul id="pizzaSizes"></ul>
+        </div>
+        <div class="col-sm-4">
+          <h3>Type of Ingredients:</h3>
+          <p>The type is a general class of ingredients, such as meat or vegetables. This is useful in calculating pizza prices.</p>
+          <ul id="ingredientTypes"></ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <h4>Add a Pizza Size:</h4>
           <div class="form-group">
             <label for="sizeDescription">Size Description: </label>
             <input type="text" id="sizeDescription" class="form-control">
@@ -42,7 +57,81 @@
             <label for="sizePrice">Size Base Price: </label>
             <input type="text" id="sizePrice" class="form-control">
           </div>
-          <button class="btn btn-default form-control" id="addPizzaSize">Add Size</button>
+          <button class="btn btn-warning form-control" id="addPizzaSize">Add Size</button>
+        </div>
+        <div class="col-sm-4">
+          <h4>Add an Ingredient:</h4>
+          <div class="form-group">
+            <label for="sizeDescription">Ingredient Description: </label>
+            <input type="text" id="ingredientDescription" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="sizePrice">Cost Per Serving: </label>
+            <input type="text" id="servingCost" class="form-control">
+          </div>
+          <button class="btn btn-warning form-control" id="addIngredient">Add Ingredient</button>
+        </div>
+        <div class="col-sm-4">
+          <h4>Add an Ingredient Type:</h4>
+          <div class="form-group">
+            <label for="sizeDescription">Label: </label>
+            <input type="text" id="typeLabel" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="sizePrice">Serving Price: </label>
+            <input type="text" id="servingPrice" class="form-control">
+          </div>
+          <button class="btn btn-warning form-control" id="addType">Add Type</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <h3>Extras:</h3>
+          <p>Extras are non-pizza items that are sold at a fixed price, such as drinks, salads, desserts.</p>
+          <ul id="extras"></ul>
+        </div>
+        <div class="col-sm-4">
+          <h3>Specials:</h3>
+          <p>Specialty pizzas can make your pizza place stand out in the crowd, add your specialties here.</p>
+          <ul id="specials"></ul>
+        </div>
+        <div class="col-sm-4">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <h4>Add an Extra:</h4>
+          <div class="form-group">
+            <label for="sizeDescription">Extra Description: </label>
+            <input type="text" id="extraDescription" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="sizePrice">Extra Cost: </label>
+            <input type="text" id="extraCost" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="sizePrice">Extra Price: </label>
+            <input type="text" id="extraPrice" class="form-control">
+          </div>
+          <button class="btn btn-warning form-control" id="addExtra">Add Extra</button>
+        </div>
+        <div class="col-sm-4">
+          <h4>Add a Special:</h4>
+          <div class="form-group">
+            <label for="sizeDescription">Special Name: </label>
+            <input type="text" id="specialName" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="sizePrice">Topping Cost: </label>
+            <input type="text" id="toppingCost" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="sizePrice">Topping Price: </label>
+            <input type="text" id="toppingPrice" class="form-control">
+          </div>
+          <button class="btn btn-warning form-control" id="addSpecial">Add Special</button>
+        </div>
+        <div class="col-sm-4">
         </div>
       </div>
     </div>
