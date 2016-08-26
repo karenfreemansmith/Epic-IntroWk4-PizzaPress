@@ -10,6 +10,12 @@ h1 {
   margin-top: 50px;
 }
 
-#specials {
+#specials,
+#admin,
+#signin {
   margin-top: 60px;
+}
+
+#admin {
+  display:none;
 }

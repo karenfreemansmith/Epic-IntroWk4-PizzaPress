@@ -1,4 +1,18 @@
 // Front End
+$(document).ready(function() {
+  $("#login").click(function() {
+    alert("logged in");
+    login();
+    $("#admin").show();
+    $("#signin").hide();
+  });
+  $("#logout").click(function() {
+    alert("logged out");
+    logout();
+    $("#admin").hide();
+    $("#signin").show();
+  });
+});
 
 // Back End
 function Order() {
@@ -51,4 +65,40 @@ function Ingredient() {
 function Extra() {
   this.description="";
   this.price=0;
+}
+
+function Business() {
+  this.orders=[];
+  this.customers=[];
+  this.ingredients=[];
+  this.types=[];
+  this.extras=[];
+  this.specials=[];
+  this.sizes=[];
+}
+
+// Data Storage
+//global variable to determine logged in status
+var loggedin=false;
+
+function login() {
+    loggedin=true;
+    localStorage.setItem("admin", true);
+}
+
+function logout() {
+  loggedin=false;
+  localStorage.setItem("admin", false);
+}
+
+//global variable to maintain business data
+var pizzaBiz=getBizData();
+
+function getBizData() {
+  if(localStorage.myBusiness) {
+    var business=JSON.parse(localStorage.getItem("myBiz"));
+  } else {
+    var business=[];
+  }
+  return business;
 }
