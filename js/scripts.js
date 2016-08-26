@@ -11,8 +11,6 @@ Order.prototype.addItem = function() {
 
 }
 
-
-
 function Pizza(size) {
   this.size;
   this.crust="";
@@ -38,7 +36,6 @@ Pizza.prototype.getPrice = function() {
   //nuts
   //fruits
   //candy
-
 }
 
 Pizza.prototype.addTopping = function(topping, amount) {
