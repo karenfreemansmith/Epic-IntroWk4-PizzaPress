@@ -61,6 +61,12 @@ function Extra() {
   this.price=0;
 }
 
+function Special(description, cost, price) {
+  this.description=description;
+  this.cost=cost;
+  this.price=price;
+}
+
 function Size(description, price) {
   this.description=description;
   this.price=price;

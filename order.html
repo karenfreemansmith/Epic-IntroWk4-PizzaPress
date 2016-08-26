@@ -27,8 +27,43 @@
         </div>
       </div>
     </div>
-    <div id="specials" class="container">
+    <div id="customer" class="container">
       <h2>Place Your Order</h2>
+      <form id="new-contact">
+        <div class="row">
+          <div class="form-group col-sm-6">
+            <label for="new-first-name">First name</label>
+            <input id="new-first-name" class="form-control" type="text">
+          </div>
+          <div class="form-group col-sm-6">
+            <label for="new-last-name">Last name</label>
+            <input id="new-last-name" class="form-control" type="text">
+          </div>
+        </div>
+
+        <div id="new-addresses">
+          <div class="new-address">
+            <div class="form-group">
+              <div class="row">
+                <div class="col-sm-12">
+                  <label for="new-street">Street</label>
+                  <input type="text" class="new-street form-control">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <label for="new-city">City</label>
+                  <input type="text" class="new-city form-control">
+                </div>
+                <div class="col-sm-6">
+                  <label for="new-state">State</label>
+                  <input type="text" class="new-state form-control">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="btn btn-warning" id="addCustomer">Deliver to this Address</span>
     </div>
   <script src="js/jquery-3.1.0.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
