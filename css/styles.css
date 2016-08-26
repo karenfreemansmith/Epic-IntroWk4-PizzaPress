@@ -1,5 +1,6 @@
 body {
-  background: url("../img/logo.png") no-repeat 120px 10px;
+  background: url("../img/logo.png") no-repeat 120px 10px, url("../img/bg.jpg");
+  color: silver;
 }
 
 .container {
