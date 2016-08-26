@@ -1,0 +1,13 @@
+body {
+  background: url("../img/logo.png") no-repeat 120px 10px;
+}
+
+.container {
+  margin-top: 140px;
+}
+
+h1 {
+  font-size: 4em;
+  margin-left: 250px;
+  margin-top: 50px;
+}
