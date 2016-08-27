@@ -49,7 +49,7 @@ $("#addExtra").click(function() {
 });
 
 $("#addSpecial").click(function() {
-  var newSpecial = new Special($("#specialName").val(), parseFloat($("#toppingCost").val()), parseFloat($("#toppingPrice").val());
+  var newSpecial = new Special($("#specialName").val(), parseFloat($("#toppingCost").val()), parseFloat($("#toppingPrice").val()));
   pizzaBiz.addSpecial(newSpecial);
   $("#pizzaSizes").append("<li>"+newSize.newSpecial+"</li>");
   $("#specialName").val("");
