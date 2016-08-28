@@ -48,14 +48,15 @@
           <ul id="pizzaSizes"></ul>
         </div>
         <div class="col-sm-4">
+          <h3>Type of Ingredients:</h3>
+          <p>The type is a general class of ingredients, such as meat or vegetables. This is useful in calculating pizza prices.</p>
+          <ul id="ingredientTypes">
+          </ul>
+        </div>
+        <div class="col-sm-4">
           <h3>Ingredients:</h3>
           <p>All of the great things you need to make a pizza, types of crust, sauces, cheeses, and lots of toppings!</p>
           <ul id="pizzaSizes"></ul>
-        </div>
-        <div class="col-sm-4">
-          <h3>Type of Ingredients:</h3>
-          <p>The type is a general class of ingredients, such as meat or vegetables. This is useful in calculating pizza prices.</p>
-          <ul id="ingredientTypes"></ul>
         </div>
       </div>
       <div class="row">
@@ -72,6 +73,18 @@
           <button class="btn btn-warning form-control" id="addPizzaSize">Add Size</button>
         </div>
         <div class="col-sm-4">
+          <h4>Add an Ingredient Type:</h4>
+          <div class="form-group">
+            <label for="TypeCategory">Category: </label>
+            <input type="text" id="typeCategory" class="form-control">
+          </div>
+          <div class="form-group">
+            <div class="radio"><label><input type="radio" name="type" value="toppings">Toppings</label></div>
+            <div class="radio"><label><input type="radio" name="type" value="extras">Extras</label></div>
+          </div>
+          <button class="btn btn-warning form-control" id="addType">Add Type</button>
+        </div>
+        <div class="col-sm-4">
           <h4>Add an Ingredient:</h4>
           <div class="form-group">
             <label for="sizeDescription">Ingredient Description: </label>
@@ -82,18 +95,6 @@
             <input type="text" id="servingCost" class="form-control">
           </div>
           <button class="btn btn-warning form-control" id="addIngredient">Add Ingredient</button>
-        </div>
-        <div class="col-sm-4">
-          <h4>Add an Ingredient Type:</h4>
-          <div class="form-group">
-            <label for="sizeDescription">Label: </label>
-            <input type="text" id="typeLabel" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="sizePrice">Serving Price: </label>
-            <input type="text" id="servingPrice" class="form-control">
-          </div>
-          <button class="btn btn-warning form-control" id="addType">Add Type</button>
         </div>
       </div>
       <div class="row top-row">

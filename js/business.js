@@ -42,6 +42,32 @@ function createBusiness() {
           description: "Medium",
           multiplier: 1
         }
+      ],
+      ingredients: [
+        {
+          description: "pepperoni",
+          cost: ".5",
+          price: ".75",
+          type: "meat"
+        },
+        {
+          description: "olives",
+          cost: ".1",
+          price: ".25",
+          type: "veggies"
+        }
+      ],
+      types: [
+        {
+          category: "meat",
+          topping: true,
+          extra: false
+        },
+        {
+          category: "veggies",
+          topping: true,
+          extra: false
+        }
       ]
     }
 
@@ -79,4 +105,10 @@ function Item(description, cost, price, type) {
   this.cost=cost;
   this.price=price;
   this.type=type;
+}
+
+function Type(category, topping, extra) {
+  this.category=category;
+  this.topping=topping;
+  this.extra=extra;
 }
