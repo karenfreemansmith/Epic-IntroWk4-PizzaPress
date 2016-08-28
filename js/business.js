@@ -119,11 +119,19 @@ function saveBusiness(Business) {
   localStorage.setItem("myBiz", JSON.stringify(Business));
 }
 
-
 // pizza size used to calcuate prices
 function Size(description, multiplier) {
   this.description=description;
   this.multiplier=multiplier;
+}
+function findSize(description) {
+  var thisSize={};
+  Business.sizes.forEach(function(size) {
+    if(size.description===description) {
+      thisSize=size;
+    }
+  });
+  return thisSize;
 }
 
 // For non-pizza items, toppings, specialties
@@ -132,6 +140,19 @@ function Item(description, cost, price) {
   this.cost=cost;
   this.price=price;
 }
+function findTopping(description) {
+  thisTopping = {};
+  Business.types.forEach(function(type) {
+     if(type.topping) {
+       type.ingredients.forEach(function(topping) {
+         if(topping.description===description) {
+           thisTopping= topping;
+         }
+       });
+     }
+  });
+  return thisTopping;
+}
 
 function Type(category, topping, extra) {
   this.category=category;
@@ -139,3 +160,4 @@ function Type(category, topping, extra) {
   this.extra=extra;
   this.ingredients=[];
 }
+Type.prototype.findType = function(category) {}

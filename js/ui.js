@@ -18,10 +18,22 @@ Business.types.sort(function(a,b) {
       return a.description-b.description;
     }).forEach(function(item) {
       $("#listToppings").append('<label class="checkbox-inline"><input type="checkbox" value="'+item.description+'" name="toppings">'+item.description+'</label>');
-
-
     });
   }
+});
+
+// add to Order
+  var total=0;
+$("#addToOrder").click(function(event) {
+  event.preventDefault();
+
+  var yourPizza = new Pizza(findSize($("input[name='size']:checked").val()));
+  $("input[name='toppings']:checked").each(function() {
+    yourPizza.addTopping(findTopping($(this).val()));
+  });
+  total+=yourPizza.getPrice();
+  $("#yourOrder").append("<li>" + yourPizza.getDescription() + ": $" + yourPizza.getPrice().toFixed(2) + "</li>");
+  $("#orderTotal").text("$" + total.toFixed(2));
 });
 
 // for admin page
