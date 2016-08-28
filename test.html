@@ -12,15 +12,6 @@
     </div>
   <script src="js/jquery-3.1.0.min.js"></script>
   <script src="js/business.js"></script>
-  <script>
-    $(".businessName").text(Business.businessName);
-    $("#newBusinessName").val(Business.businessName);
-
-    $("#editBusinessName button.update").click(function() {
-      Business.businessName=$("#newBusinessName").val();
-      $(".businessName").text(Business.businessName);
-      $("title").text(Business.businessName);
-    });
-  </script>
+  <script src="js/ui.js"></script>
   </body>
 </html>
