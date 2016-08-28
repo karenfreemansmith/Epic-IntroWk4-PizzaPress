@@ -43,30 +43,57 @@ function createBusiness() {
           multiplier: 1
         }
       ],
-      ingredients: [
-        {
-          description: "pepperoni",
-          cost: ".5",
-          price: ".75",
-          type: "meat"
-        },
-        {
-          description: "olives",
-          cost: ".1",
-          price: ".25",
-          type: "veggies"
-        }
-      ],
       types: [
         {
           category: "meat",
           topping: true,
-          extra: false
+          extra: false,
+          ingredients: [
+            {
+              description: "pepperoni",
+              cost: .5,
+              price: 1.25
+            },
+            {
+              description: "sausage",
+              cost: .5,
+              price: 1.25
+            }
+          ]
         },
         {
           category: "veggies",
           topping: true,
-          extra: false
+          extra: false,
+          ingredients: [
+            {
+              description: "mushrooms",
+              cost: .25,
+              price: .5
+            },
+            {
+              description: "olives",
+              cost: .1,
+              price: .25
+            }
+          ],
+        },
+        {
+          category: "drinks",
+          topping: false,
+          extra: true,
+          ingredients: [
+            {
+              description: "Pepsi",
+              cost: .5,
+              price: 2.75
+            },
+            {
+              description: "Budwieser",
+              cost: 1.15,
+              price: 5.25
+            }
+          ],
         }
       ]
     }
@@ -100,15 +127,15 @@ function Size(description, multiplier) {
 }
 
 // For non-pizza items, toppings, specialties
-function Item(description, cost, price, type) {
+function Item(description, cost, price) {
   this.description=description;
   this.cost=cost;
   this.price=price;
-  this.type=type;
 }
 
 function Type(category, topping, extra) {
   this.category=category;
   this.topping=topping;
   this.extra=extra;
+  this.ingredients=[];
 }

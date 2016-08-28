@@ -1,12 +1,12 @@
 // Front End
-$(document).ready(function() {
-  $("#login").click(function() {
-    login();
-  });
-  $("#logout").click(function() {
-    logout();
-  });
-});
+// $(document).ready(function() {
+//   $("#login").click(function() {
+//     login();
+//   });
+//   $("#logout").click(function() {
+//     logout();
+//   });
+// });
 
 // Back End
 function Order() {
@@ -111,20 +111,20 @@ Business.prototype.addSpecial = function(special) {
 
 // Data Storage
 //global variable to maintain business data
-var pizzaBiz=getBizData();
+// var pizzaBiz=getBizData();
 
-function getBizData() {
-  var business=new Business();
-  if(localStorage.myBiz) {
-    var tempBD=JSON.parse(localStorage.getItem("myBiz"));
-    tempBD.sizes.forEach(function(size) {
-      business.addSize(size);
-    });
-  }
-  console.log(business);
-  return business;
-}
-
-function saveBizData() {
-  localStorage.setItem("myBiz", JSON.stringify(pizzaBiz));
-}
+// function getBizData() {
+//   var business=new Business();
+//   if(localStorage.myBiz) {
+//     var tempBD=JSON.parse(localStorage.getItem("myBiz"));
+//     tempBD.sizes.forEach(function(size) {
+//       business.addSize(size);
+//     });
+//   }
+//   console.log(business);
+//   return business;
+// }
+//
+// function saveBizData() {
+//   localStorage.setItem("myBiz", JSON.stringify(pizzaBiz));
+// }

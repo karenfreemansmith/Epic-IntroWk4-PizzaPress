@@ -14,6 +14,13 @@ Business.types.sort(function(a,b) {
 }).forEach(function(type) {
   if(type.topping) {
     $("#listToppings").append('<h5 id='+type.category+'>'+type.category+':</h5>');
+    type.ingredients.sort(function(a,b) {
+      return a.description-b.description;
+    }).forEach(function(item) {
+      $("#listToppings").append('<label class="checkbox-inline"><input type="checkbox" value="'+item.description+'" name="toppings">'+item.description+'</label>');
+
+
+    });
   }
 });
 
@@ -77,8 +84,58 @@ $("#addType").click(function() {
   }
   var newType = new Type($("#typeCategory").val(), typeToppings, typeExtras);
   Business.types.push(newType);
-  alert(newType.category +":"+ newType.topping +":"+ newType.extra);
-  $("#ingredientTypes").append("<li>"+newType.category+"</li>");
+  $("#ingredientTypes").append("<li><span class='category'>"+newType.category+"</span></li>");
   $("#typeCategory").val("");
+  saveBusiness(Business);
+});
+
+// ingredients, and other items to be sold
+// to be filtered by type ... how?
+// display toppings and extras
+Business.types.forEach(function(type) {
+  if(type.topping) {
+    $("#toppingTypes").append("<option>"+type.category+"</option>");
+    type.ingredients.sort(function(a,b) {
+      return a.description-b.description;
+    }).forEach(function(item) {
+      $("#ingredients").append("<li>"+item.description+"</li>");
+    });
+  } else {
+    $("#extraTypes").append("<option>"+type.category+"</option>");
+    type.ingredients.sort(function(a,b) {
+      return a.description-b.description;
+    }).forEach(function(item) {
+      $("#extras").append("<li>"+item.description+"</li>");
+    });
+  }
+});
+
+// input new toppings
+$("#addIngredient").click(function() {
+  var newItem = new Item($("#ingredientDescription").val(), $("#ingredientCost").val(), $("#ingredientPrice").val());
+  Business.types.forEach(function(type) {
+    if(type.category===$("#toppingTypes").val()) {
+      type.ingredients.push(newItem);
+    }
+  });
+  $("#ingredients").append("<li>"+newItem.description+"</li>");
+  $("#ingredientDescription").val("");
+  $("#servingCost").val("");
+  $("#servingPrice").val("");
+  saveBusiness(Business);
+});
+
+// input new extras
+$("#addExtra").click(function() {
+  var newItem = new Item($("#extraDescription").val(), $("#extraCost").val(), $("#extraPrice").val());
+  Business.types.forEach(function(type) {
+    if(type.category===$("#extraTypes").val()) {
+      type.ingredients.push(newItem);
+    }
+  });
+  $("#extras").append("<li>"+newItem.description+"</li>");
+  $("#extraDescription").val("");
+  $("#extraCost").val("");
+  $("#extraPrice").val("");
   saveBusiness(Business);
 });

@@ -55,8 +55,8 @@
         </div>
         <div class="col-sm-4">
           <h3>Ingredients:</h3>
-          <p>All of the great things you need to make a pizza, types of crust, sauces, cheeses, and lots of toppings!</p>
-          <ul id="pizzaSizes"></ul>
+          <p>All of the great things you need to make a pizza, types of crust, sauces, cheeses, and lots of toppings! Plus extra items like drinks, appetizers, and desserts.</p>
+          <ul id="ingredients"></ul>
         </div>
       </div>
       <div class="row">
@@ -87,12 +87,20 @@
         <div class="col-sm-4">
           <h4>Add an Ingredient:</h4>
           <div class="form-group">
-            <label for="sizeDescription">Ingredient Description: </label>
+            <select class="form-control" id="toppingTypes">
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="ingredientDescription">Ingredient Description: </label>
             <input type="text" id="ingredientDescription" class="form-control">
           </div>
           <div class="form-group">
-            <label for="sizePrice">Cost Per Serving: </label>
+            <label for="servingCost">Cost Per Serving: </label>
             <input type="text" id="servingCost" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="servingPrice">Price Per Serving: </label>
+            <input type="text" id="servingPrice" class="form-control">
           </div>
           <button class="btn btn-warning form-control" id="addIngredient">Add Ingredient</button>
         </div>
@@ -115,15 +123,19 @@
         <div class="col-sm-4">
           <h4>Add an Extra:</h4>
           <div class="form-group">
-            <label for="sizeDescription">Extra Description: </label>
+            <select class="form-control" id="extraTypes">
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="extraDescription">Item Description: </label>
             <input type="text" id="extraDescription" class="form-control">
           </div>
           <div class="form-group">
-            <label for="sizePrice">Extra Cost: </label>
+            <label for="extraCost">Cost Per Item: </label>
             <input type="text" id="extraCost" class="form-control">
           </div>
           <div class="form-group">
-            <label for="sizePrice">Extra Price: </label>
+            <label for="extraPrice">Price Per Item: </label>
             <input type="text" id="extraPrice" class="form-control">
           </div>
           <button class="btn btn-warning form-control" id="addExtra">Add Extra</button>
