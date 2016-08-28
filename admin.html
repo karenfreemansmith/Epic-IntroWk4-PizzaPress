@@ -29,14 +29,22 @@
     </div>
     <div id="admin" class="container">
       <h2>Set-up Your Pizza Business</h2>
-      <div id="editBusinessName">
-        <input id="newBusinessName" type="text">
-        <button class="update btn btn-warning">Update Business Name</button>
+      <div class="row top-row">
+        <div id="editBusinessName" class="form-group col-sm-3">
+          <h3>Business Name:</h3>
+          <input id="newBusinessName" type="text" class="form-control">
+          <button class="update btn btn-warning form-control">Update Business Name</button>
+        </div>
+        <div id="editBasePrice" class="form-group col-sm-3">
+          <h3>Base Pizza Price:</h3>
+          <input id="newBasePrice" type="text" class="form-control">
+          <button class="update btn btn-warning form-control">Update Base Price</button>
+        </div>
       </div>
       <div class="row top-row">
         <div class="col-sm-4">
           <h3>Pizza Sizes:</h3>
-          <p>Expand your menu by offering several sizes of pizza. The base price for each pizza is what it costs to build a standard cheese pizza with no toppings.</p>
+          <p>Expand your menu by offering several sizes of pizza. The multiplier is the amount (more or less) than your base price for this size of pizza and it's toppings. (.5 for a smaller pizza, or 2 for a larger pizza)</p>
           <ul id="pizzaSizes"></ul>
         </div>
         <div class="col-sm-4">
@@ -58,7 +66,7 @@
             <input type="text" id="sizeDescription" class="form-control">
           </div>
           <div class="form-group">
-            <label for="sizePrice">Size Base Price: </label>
+            <label for="sizePrice">Size Price Multiplier: </label>
             <input type="text" id="sizePrice" class="form-control">
           </div>
           <button class="btn btn-warning form-control" id="addPizzaSize">Add Size</button>
