@@ -5,9 +5,9 @@ var loggedin=true;
 
 var pageHTML="";
 if(loggedin===true) {
-  pizzaBiz.sizes.forEach(function(size) {
-    $("#pizzaSizes").append("<li>"+size.description+": "+size.price+"</li>");
-  });
+  // pizzaBiz.sizes.forEach(function(size) {
+  //   $("#pizzaSizes").append("<li>"+size.description+": "+size.price+"</li>");
+  // });
 
   //pageHTML+='<button id="logout" class="btn btn-default btn-lg">Logout Here</button>';
 } else {
@@ -16,13 +16,13 @@ if(loggedin===true) {
 }
 $("#admin").prepend(pageHTML);
 
-$("#addPizzaSize").click(function() {
-  var newSize = new Size($("#sizeDescription").val(), parseFloat($("#sizePrice").val()));
-  pizzaBiz.addSize(newSize);
-  $("#pizzaSizes").append("<li>"+newSize.description+": $"+newSize.price.toFixed(2)+"</li>");
-  $("#sizeDescription").val("");
-  $("#sizePrice").val("");
-});
+// $("#addPizzaSize").click(function() {
+//   var newSize = new Size($("#sizeDescription").val(), parseFloat($("#sizePrice").val()));
+//   pizzaBiz.addSize(newSize);
+//   $("#pizzaSizes").append("<li>"+newSize.description+": $"+newSize.price.toFixed(2)+"</li>");
+//   $("#sizeDescription").val("");
+//   $("#sizePrice").val("");
+// });
 
 $("#addIngredient").click(function() {
   var newSize = new Size($("#sizeDescription").val(), parseFloat($("#sizePrice").val()));

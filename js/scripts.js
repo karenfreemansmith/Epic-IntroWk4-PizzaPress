@@ -104,10 +104,10 @@ Business.prototype.addSpecial = function(special) {
   this.specials.push(special);
   saveBizData();
 }
-Business.prototype.addSize = function(size) {
-  this.sizes.push(size);
-  saveBizData();
-}
+// Business.prototype.addSize = function(size) {
+//   this.sizes.push(size);
+//   saveBizData();
+// }
 
 // Data Storage
 //global variable to maintain business data

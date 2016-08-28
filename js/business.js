@@ -36,8 +36,15 @@ function createBusiness() {
           total: 9.95,
           date: "2016-08-27"
         }
+      ],
+      sizes: [
+        {
+          description: "Medium",
+          multiplier: 1
+        }
       ]
     }
+
     return Business;
   }
 
