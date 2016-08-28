@@ -2,10 +2,19 @@
 $(".businessName").text(Business.businessName);
 $("title").text(Business.businessName);
 
+// for build your pizza page
+Business.sizes.sort(function(a,b) {
+  return a.multiplier-b.multiplier;
+}).forEach(function(size) {
+  $("#listSizes").append('<div class="radio"><label><input type="radio" name="size" value="'+size.description+'">'+size.description+' <br>...starting at $'+(size.multiplier*Business.basePrice).toFixed(2)+'</label></div>');
+});
+
 // for admin page
 $("#newBusinessName").val(Business.businessName);
 $("#newBasePrice").val(Business.basePrice);
-Business.sizes.forEach(function(size) {
+Business.sizes.sort(function(a,b) {
+  return a.multiplier-b.multiplier;
+}).forEach(function(size) {
   $("#pizzaSizes").append("<li>"+size.description+": $"+(size.multiplier*Business.basePrice).toFixed(2)+"</li>");
 });
 
