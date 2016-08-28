@@ -1,4 +1,5 @@
-function Customer(first, last, street, city, state, zip, method) {
+function Customer(email, first, last, street, city, state, zip, method) {
+  this.email=email;
   this.firstName=first;
   this.lastName=last;
   this.address=street;
