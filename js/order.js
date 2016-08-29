@@ -18,5 +18,5 @@ function Order(customer) {
 
 Order.prototype.addItem = function(item) {
   this.items.push(item);
-  this.total+=item.price;
+  this.total+=item.getPrice();
 }

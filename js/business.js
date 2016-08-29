@@ -20,23 +20,23 @@ function createBusiness() {
     var Business = {
       businessName: "Pizza Press",
       basePrice: 9.95,
-      orders: [
-        {
-          customer: {
-            email: "owner@pizzapress.com",
-            firstName: "Karen",
-            lastName: "Freeman-Smith",
-            address: "1710 Henderson Ave",
-            city: "Eugene",
-            state: "OR",
-            zip: "97403",
-            paymentMethod: "Visa"
-          },
-          items: [],
-          total: 9.95,
-          date: "2016-08-27"
-        }
-      ],
+      orders:[],
+      customers:[],
+      currentOrder: {
+        customer: {
+          email: "owner@pizzapress.com",
+          firstName: "Guest",
+          lastName: "Doe",
+          address: "1234 Main St",
+          city: "Anytown",
+          state: "USA",
+          zip: "12345",
+          paymentMethod: "Cash"
+        },
+        items: [],
+        total: 0,
+        date: "2016-08-27"
+      },
       sizes: [
         {
           description: "Medium",
