@@ -31,13 +31,19 @@
       <h2>Place Your Order</h2>
       <form id="new-contact">
         <div class="row">
+          <div class="form-group col-sm-12">
+            <label for="newEmail">Email</label>
+            <input id="newEmail" class="form-control" type="text">
+          </div>
+        </div>
+        <div class="row">
           <div class="form-group col-sm-6">
-            <label for="new-first-name">First name</label>
-            <input id="new-first-name" class="form-control" type="text">
+            <label for="newFirstName">First name</label>
+            <input id="newFirstName" class="form-control" type="text">
           </div>
           <div class="form-group col-sm-6">
-            <label for="new-last-name">Last name</label>
-            <input id="new-last-name" class="form-control" type="text">
+            <label for="newLastName">Last name</label>
+            <input id="newLastName" class="form-control" type="text">
           </div>
         </div>
 
@@ -46,22 +52,22 @@
             <div class="form-group">
               <div class="row">
                 <div class="col-sm-12">
-                  <label for="new-street">Street</label>
-                  <input type="text" class="new-street form-control">
+                  <label for="newStreet">Street</label>
+                  <input type="text" class="newStreet form-control">
                 </div>
               </div>
               <div class="row">
                 <div class="col-sm-6">
-                  <label for="new-city">City</label>
-                  <input type="text" class="new-city form-control">
+                  <label for="newCity">City</label>
+                  <input type="text" class="newCity form-control">
                 </div>
                 <div class="col-sm-2">
-                  <label for="new-state">State</label>
-                  <input type="text" class="new-state form-control">
+                  <label for="newState">State</label>
+                  <input type="text" class="newState form-control">
                 </div>
                 <div class="col-sm-4">
-                  <label for="new-state">Zip</label>
-                  <input type="text" class="new-zip form-control">
+                  <label for="newZip">Zip</label>
+                  <input type="text" class="newZip form-control">
                 </div>
               </div>
             </div>
@@ -70,7 +76,6 @@
         <span class="btn btn-warning" id="addCustomer">Deliver to this Address</span>
     </div>
   <script src="js/jquery-3.1.0.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
   <script src="js/business.js"></script>
   <script src="js/order.js"></script>
   <script src="js/ui.js"></script>
