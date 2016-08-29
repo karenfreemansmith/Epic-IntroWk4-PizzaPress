@@ -13,26 +13,25 @@ Business.types.sort(function(a,b) {
   return a.multiplier-b.multiplier;
 }).forEach(function(type) {
   if(type.topping) {
-    $("#listToppings").append('<h5 id='+type.category+'>'+type.category+':</h5>');
+    $("#listToppings").append('<h5 id='+type.category+'>'+type.category.toUpperCase()+':</h5>');
     type.ingredients.sort(function(a,b) {
       return a.description-b.description;
     }).forEach(function(item) {
-      $("#listToppings").append('<label class="checkbox-inline"><input type="checkbox" value="'+item.description+'" name="toppings">'+item.description+'</label>');
+      $("#listToppings").append('<label class="checkbox-inline"><input type="checkbox" value="'+item.description+'" name="toppings">'+item.description.toLowerCase()+'</label>');
     });
   }
 });
 
 // add to Order
-  var total=0;
+var total=0;
 $("#addToOrder").click(function(event) {
   event.preventDefault();
-
   var yourPizza = new Pizza(findSize($("input[name='size']:checked").val()));
   $("input[name='toppings']:checked").each(function() {
     yourPizza.addTopping(findTopping($(this).val()));
   });
   total+=yourPizza.getPrice();
-  $("#yourOrder").append("<li>" + yourPizza.getDescription() + ": $" + yourPizza.getPrice().toFixed(2) + "</li>");
+  $("#yourOrder").append("<li>" + yourPizza.getDescription().toUpperCase() + ": $" + yourPizza.getPrice().toFixed(2) + "</li>");
   $("#orderTotal").text("$" + total.toFixed(2));
 });
 
@@ -52,7 +51,7 @@ $("#editBusinessName button.update").click(function() {
 $("#newBasePrice").val(Business.basePrice);
 // update base price
 $("#editBasePrice button.update").click(function() {
-  Business.basePrice=$("#newBasePrice").val();
+  Business.basePrice=parseFloat($("#newBasePrice").val());
   saveBusiness(Business);
   location.reload(); // refresh size-price list with recalculated prices
 });
@@ -124,7 +123,7 @@ Business.types.forEach(function(type) {
 
 // input new toppings
 $("#addIngredient").click(function() {
-  var newItem = new Item($("#ingredientDescription").val(), $("#ingredientCost").val(), $("#ingredientPrice").val());
+  var newItem = new Item($("#ingredientDescription").val(), parseFloat($("#ingredientCost").val()), parseFloat($("#ingredientPrice").val()));
   Business.types.forEach(function(type) {
     if(type.category===$("#toppingTypes").val()) {
       type.ingredients.push(newItem);
@@ -139,7 +138,7 @@ $("#addIngredient").click(function() {
 
 // input new extras
 $("#addExtra").click(function() {
-  var newItem = new Item($("#extraDescription").val(), $("#extraCost").val(), $("#extraPrice").val());
+  var newItem = new Item($("#extraDescription").val(), parseFloat($("#extraCost").val()), parseFloat($("#extraPrice").val()));
   Business.types.forEach(function(type) {
     if(type.category===$("#extraTypes").val()) {
       type.ingredients.push(newItem);

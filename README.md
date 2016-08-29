@@ -26,6 +26,7 @@ A website for a pizza place (upgrade for [Joe's Pizza](https://karenfreemansmith
 ### Setup/Installation
 * None required, can view at https://karenfreemansmith.github.io/pizzapress
 * To view locally, clone https://github.com/karenfreemansmith/pizzapress
+* If things go terribly wrong with your customizations, you can type "localStorage.clear()" in the console to start over.
 
 ### Known Issues (Incomplete items)
 * Offer delivery option that requires address (form is not connected yet)
