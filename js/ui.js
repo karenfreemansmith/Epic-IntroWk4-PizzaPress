@@ -35,6 +35,29 @@ $("#addToOrder").click(function(event) {
   $("#orderTotal").text("$" + total.toFixed(2));
 });
 
+// for order page
+$("#newEmail").val(Business.currentOrder.customer.email);
+$("#newFirstName").val(Business.currentOrder.customer.firstName);
+$("#newLastName").val(Business.currentOrder.customer.lastName);
+$("#newStreet").val(Business.currentOrder.customer.address);
+$("#newCity").val(Business.currentOrder.customer.city);
+$("#newState").val(Business.currentOrder.customer.state);
+$("#newZip").val(Business.currentOrder.customer.zip);
+$("#newPayment").val(Business.currentOrder.customer.paymentMethod);
+//$("#newPhone").val(Business.currentOrder.customer.phone);
+// update business name
+$("#addCustomer").click(function() {
+  Business.currentOrder.customer.email=$("#newEmail").val();
+  Business.currentOrder.customer.firstName=$("#newFirstName").val();
+  Business.currentOrder.customer.lastName=$("#newLastName").val();
+  Business.currentOrder.customer.address=$("#newStreet").val();
+  Business.currentOrder.customer.city=$("#newCity").val();
+  Business.currentOrder.customer.state=$("#newState").val();
+  Business.currentOrder.customer.zip=$("#newZip").val();
+  Business.currentOrder.customer.paymentMethod=$("#newPayment").val();
+  saveBusiness(Business);
+});
+
 // for admin page
 // business name
 // display in editable field
