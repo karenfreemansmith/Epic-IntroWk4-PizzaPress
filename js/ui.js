@@ -85,7 +85,7 @@ $("#editBusinessName button.update").click(function() {
 });
 // business base pizza price (typically medium cheese pizza)
 // display in editable field
-$("#newBasePrice").val(Business.basePrice);
+$("#newBasePrice").val(Business.basePrice.toFixed(2));
 // update base price
 $("#editBasePrice button.update").click(function() {
   Business.basePrice=parseFloat($("#newBasePrice").val());
@@ -146,27 +146,27 @@ Business.types.forEach(function(type) {
     type.ingredients.sort(function(a,b) {
       return a.description-b.description;
     }).forEach(function(item) {
-      $("#ingredients").append("<li>"+item.description+"</li>");
+      $("#ingredients").append("<li>"+item.description+": $"+item.price.toFixed(2)+"</li>");
     });
   } else {
     $("#extraTypes").append("<option>"+type.category+"</option>");
     type.ingredients.sort(function(a,b) {
       return a.description-b.description;
     }).forEach(function(item) {
-      $("#extras").append("<li>"+item.description+"</li>");
+      $("#extras").append("<li>"+item.description+": $"+item.price.toFixed(2)+"</li>");
     });
   }
 });
 
 // input new toppings
 $("#addIngredient").click(function() {
-  var newItem = new Item($("#ingredientDescription").val(), parseFloat($("#ingredientCost").val()), parseFloat($("#ingredientPrice").val()));
+  var newItem = new Item($("#ingredientDescription").val(), parseFloat($("#servingCost").val()), parseFloat($("#servingPrice").val()));
   Business.types.forEach(function(type) {
     if(type.category===$("#toppingTypes").val()) {
       type.ingredients.push(newItem);
     }
   });
-  $("#ingredients").append("<li>"+newItem.description+"</li>");
+  $("#ingredients").append("<li>"+newItem.description+": $"+newItem.price.toFixed(2)+"</li>");
   $("#ingredientDescription").val("");
   $("#servingCost").val("");
   $("#servingPrice").val("");
