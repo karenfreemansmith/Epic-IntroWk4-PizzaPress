@@ -36,6 +36,20 @@ $("#addToOrder").click(function(event) {
 });
 
 // for order page
+// suggest extra items to add to order
+Business.types.sort(function(a,b) {
+  return a.multiplier-b.multiplier;
+}).forEach(function(type) {
+  if(type.extra) {
+    $("#listExtras").append('<h5 id='+type.category+'>'+type.category.toUpperCase()+':</h5>');
+    type.ingredients.sort(function(a,b) {
+      return a.description-b.description;
+    }).forEach(function(item) {
+      $("#listExtras").append('<label class="checkbox-inline"><input type="checkbox" value="'+item.description+'" name="toppings">'+item.description.toLowerCase()+'</label>');
+    });
+  }
+});
+// remember customer details and pre-populate form
 $("#newEmail").val(Business.currentOrder.customer.email);
 $("#newFirstName").val(Business.currentOrder.customer.firstName);
 $("#newLastName").val(Business.currentOrder.customer.lastName);
