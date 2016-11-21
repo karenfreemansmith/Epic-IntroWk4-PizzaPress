@@ -7,6 +7,10 @@ __Version 2: August 28, 2016__
 ### Description
 A website for a pizza place (upgrade for [Joe's Pizza](https://karenfreemansmith.github.io/pizza)).
 
+
+## Technologies Used
+HTML, CSS, Bootstrap, JavaScript, jQuery, Local Storage
+
 ### Specifications
 * Allow user to choose toppings and size for the pizza they would like to order.
 * Create a pizza object constructor with properties for toppings and size
@@ -23,10 +27,14 @@ A website for a pizza place (upgrade for [Joe's Pizza](https://karenfreemansmith
 * Owner can edit create rules like sales tax or delivery charges
 * Owner can modify business name to brand their pizza site
 
-### Setup/Installation
-* None required, can view at https://karenfreemansmith.github.io/pizzapress
-* To view locally, clone https://github.com/karenfreemansmith/pizzapress
-* If things go terribly wrong with your customizations, you can type "localStorage.clear()" in the console to start over.
+## Setup/Installation
+* [View on Github Pages](https://karenfreemansmith.github.io/EpicIntroWk1-PetWebsite)
+* _OR_
+* Clone diectory 
+* Open index.html in your favorite browser
+
+## Support & Contact
+For questions, concerns, or suggestions please email karenfreemansmith@gmail.com
 
 ### Known Issues (Incomplete items)
 * Offer delivery option that requires address (form is not connected yet)
@@ -37,13 +45,7 @@ A website for a pizza place (upgrade for [Joe's Pizza](https://karenfreemansmith
 * Owner cannot modify colors or logo for branding yet
 * There are no reports available yet
 
-### Support & Contact
-For questions or comments, please __email [Karen](karenfreemansmith@gmail.com)__
-
-### Technologies Used
-###### HTML, CSS, Bootstrap, JavaScript, jQuery, Local Storage
-
-### Legal
+## Legal
 *Licensed under the GNU General Public License v3.0*
 
-Copyright (c) 2016 **_Karen Freeman-Smith_**
+Copyright (c) 2016 Copyright _[Karen Freeman-Smith](https://karenfreemansmith.github.io)_ All Rights Reserved.
